@@ -70,10 +70,12 @@ class CarDetailView(LoginRequiredMixin, generic.DetailView):
 
         if action == "add":
             user.cars.add(car)
-            messages.success(request, "Car successfully added to your profile.")
+            messages.success(
+                request, "Car successfully added to your profile.")
         elif action == "remove":
             user.cars.remove(car)
-            messages.success(request, "Car successfully removed from your profile.")
+            messages.success(
+                request, "Car successfully removed from your profile.")
         else:
             messages.warning(request, "Invalid action.")
 
